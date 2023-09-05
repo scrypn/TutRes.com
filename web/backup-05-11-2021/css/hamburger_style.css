@@ -1,0 +1,107 @@
+﻿/*.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}*/
+
+.menuh {
+    height: 36px;
+    width: 36px;
+    position: relative;
+    float: left;
+    cursor: pointer;
+    /*transform: translate(-50%, -50%);*/
+}
+
+.hambergerIcon {
+    height: 3px;
+    width: 32px;
+    position: absolute;
+    /*top: 39.5px;*/
+    top: 50%;
+    left: 50%;
+    /* left: -50%;*/
+    border-radius: 50px;
+    margin: 0;
+    background-color: #00D363;
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+    -moz-transform: translate(-50%, -50%) rotate(0deg);
+    -o-transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s;
+    /*transition: transform 0.5s, color 1s;*/
+}
+
+.hambergerIcon::before, .hambergerIcon::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    border-radius: 50px;
+    background-color: #00D363;
+    margin: 0;
+    width: 16px;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; /*transform 0.4s ease-in-out 0.01ms*/
+    /*transition: translate 0.5s, color 1s, width 0.3s, rotate 0.5s;*/
+}
+
+.hambergerIcon::before {
+    top: -9px;
+    left: 0;
+    -webkit-transform-origin: left;
+    -moz-transform-origin: left;
+    -o-transform-origin: left;
+    transform-origin: left;
+}
+
+.hambergerIcon::after {
+    bottom: -9px;
+    right: 0;
+    -webkit-transform-origin: right;
+    -moz-transform-origin: right;
+    -o-transform-origin: right;
+    transform-origin: right;
+}
+
+.open {
+    background-color: #ff0000;
+    -webkit-transform: translate(-50%, -50%) rotate(135deg);
+    -moz-transform: translate(-50%, -50%) rotate(135deg);
+    -o-transform: translate(-50%, -50%) rotate(135deg);
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.open::before {
+    background-color: red;
+    width: 16px;
+    top: 0;
+    -webkit-transform: translateX(100%) rotate(-90deg);
+    -moz-transform: translateX(100%) rotate(-90deg);
+    -o-transform: translateX(100%) rotate(-90deg);
+    transform: translateX(100%) rotate(-90deg);
+}
+
+.open::after {
+    background-color: red;
+    width: 16px;
+    bottom: 0;
+    -webkit-transform: translateX(-100%) rotate(-90deg);
+    -moz-transform: translateX(-100%) rotate(-90deg);
+    -o-transform: translateX(-100%) rotate(-90deg);
+    transform: translateX(-100%) rotate(-90deg);
+}
+
+@media (min-width: 991px) {
+    .menuh {
+        display: none;
+    }
+
+}
